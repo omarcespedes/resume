@@ -81,22 +81,22 @@ const educationHistory = [
   }
 ]
 
-function App() {
+function Resume() {
   return (
     <div style={{ display: 'flex' }}>
       <Sidebar completeName="Omar Rodolfo Cespedes Daza" />
       <div id="content">
-        <Section title="Intro">
+        <Section bigTitle title="Intro">
           Javascript developer with more than 5 years of experience. Currently
           specializing in React. Passionate learner and always trying out the
           latest technologies.
         </Section>
-        <Section title="Work History">
+        <Section bigTitle title="Work History">
           {workHistory.map(job => (
             <WorkHistory key={job.fromTo} {...job} />
           ))}
         </Section>
-        <Section title="Education">
+        <Section bigTitle title="Education">
           {educationHistory.map(education => (
             <EducationHistory key={education.fromTo} {...education} />
           ))}
@@ -106,4 +106,4 @@ function App() {
   )
 }
 
-export default App
+export default Resume
