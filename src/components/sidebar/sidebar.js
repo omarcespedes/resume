@@ -3,14 +3,26 @@ import IconText from '../icon-text/iconText'
 import Section from '../section/section'
 import SkillSquare from '../skill-squares/skillSquares'
 import colors from '../../colors'
+import {
+  IoLogoTwitter,
+  IoLogoGithub,
+  IoMdMail,
+  IoMdLocate,
+  IoMdPhonePortrait
+} from 'react-icons/io'
 
 const Sidebar = ({ completeName, backgroundColor = colors.PRIMARY }) => {
   return (
-    <div style={{ backgroundColor, color: 'white' }}>
+    <div style={{ backgroundColor, color: 'white', padding: 8 }}>
       <div>Avatar</div>
-      <div style={{ textTransform: 'uppercase' }}>{completeName}</div>
-      <IconText text="@omarcspds" />
-      <IconText text="github/omarcespedes" />
+      <div style={{ textTransform: 'uppercase', fontSize: '20px' }}>
+        {completeName}
+      </div>
+      <IconText icon={<IoMdLocate />} text="La Paz, Bolivia" />
+      <IconText icon={<IoMdPhonePortrait />} text="+591 76789545" />
+      <IconText icon={<IoMdMail />} text="omarcspds@gmail.com" />
+      <IconText icon={<IoLogoTwitter />} text="@omarcspds" />
+      <IconText icon={<IoLogoGithub />} text="/omarcespedes" />
       <Section title="Languages" titleColor="white" lineColor="white">
         <ul>
           <li>
