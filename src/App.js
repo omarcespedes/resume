@@ -8,7 +8,7 @@ const workHistory = [
   {
     fromTo: '2019 - Present',
     role: 'Software Engineer',
-    company: 'Team Software',
+    companyName: 'Team Software',
     responsibilities: [
       'Creation and maintenance of reusable components with React.',
       'Creation of REST endpoints with Node.js and Express.',
@@ -27,7 +27,7 @@ const workHistory = [
   {
     fromTo: '2015 - 2019',
     role: 'Senior Frontend Developer',
-    company: 'Xtime',
+    companyName: 'Xtime',
     responsibilities: [
       'Wrote templates and React components to be reused across the whole web app.',
       'Styling of application with Sass.',
@@ -48,7 +48,7 @@ const workHistory = [
   {
     fromTo: '2014 - 2015',
     role: 'Junior Developer',
-    company: 'eSoft',
+    companyName: 'eSoft',
     responsibilities: [
       'Desktop application development with VB.Net',
       'Customization with VB.net in the POS module adding visual feedback to the user.'
@@ -58,7 +58,7 @@ const workHistory = [
   {
     fromTo: '2013 - 2014',
     role: 'Junior Developer',
-    company: 'Dao Systems LA',
+    companyName: 'Dao Systems LA',
     responsibilities: [
       'Application development in OpenERP (Odoo).',
       'Working with JavaScript, JQuery and Backbone to customize the POS module.'
@@ -84,7 +84,7 @@ const educationHistory = [
 function App() {
   return (
     <div style={{ display: 'flex' }}>
-      <Sidebar />
+      <Sidebar completeName="Omar Rodolfo Cespedes Daza" />
       <div id="content">
         <Section title="Intro">
           Javascript developer with more than 5 years of experience. Currently
@@ -93,12 +93,12 @@ function App() {
         </Section>
         <Section title="Work History">
           {workHistory.map(job => (
-            <WorkHistory {...job} />
+            <WorkHistory key={job.fromTo} {...job} />
           ))}
         </Section>
         <Section title="Education">
           {educationHistory.map(education => (
-            <EducationHistory {...education} />
+            <EducationHistory key={education.fromTo} {...education} />
           ))}
         </Section>
       </div>

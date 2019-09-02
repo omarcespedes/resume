@@ -9,11 +9,11 @@ const WorkHistory = ({
   technologies = []
 }) => {
   return (
-    <div style={{ display: 'flex' }}>
-      <div>{fromTo}</div>
+    <div style={{ display: 'flex', padding: '10px 0' }}>
+      <div style={{ width: 110 }}>{fromTo}</div>
       <div style={{ flex: 1 }}>
-        <div>{role}</div>
-        <div>{companyName}</div>
+        <div style={{ fontWeight: 'bold' }}>{role}</div>
+        <div style={{ fontWeight: 'bold' }}>{companyName}</div>
         {companyDesc && <div>{companyDesc}</div>}
         {responsibilities.length ? (
           <div>
@@ -25,7 +25,9 @@ const WorkHistory = ({
           </div>
         ) : null}
         {technologies.length ? (
-          <div>Technologies: {technologies.join(', ')}</div>
+          <div>
+            <strong>Technologies:</strong> {technologies.join(', ')}
+          </div>
         ) : null}
       </div>
     </div>
