@@ -10,19 +10,45 @@ import {
   IoMdLocate,
   IoMdPhonePortrait
 } from 'react-icons/io'
+import profileImg from '../../assets/profile.jpg'
 
 const Sidebar = ({ completeName, backgroundColor = colors.PRIMARY }) => {
   return (
-    <div style={{ backgroundColor, color: 'white', padding: 8 }}>
-      <div>Avatar</div>
-      <div style={{ textTransform: 'uppercase', fontSize: '20px' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor,
+        color: 'white',
+        padding: 8,
+        maxWidth: 260
+      }}
+    >
+      <div>
+        <img
+          style={{ width: 160, borderRadius: 70 }}
+          src={profileImg}
+          alt="Profile"
+        />
+      </div>
+      <div
+        style={{
+          textAlign: 'center',
+          textTransform: 'uppercase',
+          fontSize: '22px',
+          margin: '10px 0'
+        }}
+      >
         {completeName}
       </div>
-      <IconText icon={<IoMdLocate />} text="La Paz, Bolivia" />
-      <IconText icon={<IoMdPhonePortrait />} text="+591 76789545" />
-      <IconText icon={<IoMdMail />} text="omarcspds@gmail.com" />
-      <IconText icon={<IoLogoTwitter />} text="@omarcspds" />
-      <IconText icon={<IoLogoGithub />} text="/omarcespedes" />
+      <div>
+        <IconText icon={<IoMdLocate />} text="La Paz, Bolivia" />
+        <IconText icon={<IoMdPhonePortrait />} text="+591 76789545" />
+        <IconText icon={<IoMdMail />} text="omarcspds@gmail.com" />
+        <IconText icon={<IoLogoTwitter />} text="@omarcspds" />
+        <IconText icon={<IoLogoGithub />} text="/omarcespedes" />
+      </div>
       <Section title="Languages" titleColor="white" lineColor="white">
         <ul>
           <li>
