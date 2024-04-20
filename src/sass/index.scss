@@ -1,0 +1,17 @@
+// main colors
+$primary: #2f528f;
+$sidebar_font_color: white;
+$CONTENT_FONT: 'black';
+$badge-color: #ddd;
+
+@import '../components/experience-entry/experienceEntry.scss';
+@import '../components/sidebar/sidebar.scss';
+@import '../components/section/section.scss';
+@import '../components/icon-text/iconText.scss';
+  
+  
+.work-container {
+    .experience-entry {
+        padding-bottom: 20px;
+    }
+}

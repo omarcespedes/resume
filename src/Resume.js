@@ -1,13 +1,38 @@
 import React from 'react'
 import Section from './components/section/section'
-import WorkHistory from './components/work-history/workHistory'
-import EducationHistory from './components/education-history/educationHistory'
 import Sidebar from './components/sidebar/sidebar'
+import ExperienceEntry from './components/experience-entry/experienceEntry'
+
+import './sass/index.scss'
 
 const workHistory = [
   {
     fromTo: '2019 - Present',
-    role: 'Software Engineer',
+    role: 'Senior Fronted Team Lead',
+    companyName: 'Booz Allen Hamilton (through BairesDev)',
+    responsibilities: [
+      'In charge of the Camping Frontend team',
+      'Focused on web performance',
+      'Participated actively in UX process to provide the best experience to the user',
+      'Enforced React best practices to ensure code maintainability and scalability',
+      'Provided creative ideas to address complex user interfaces'
+    ],
+    technologies: [
+      'React',
+      'Redux',
+      'NodeJS',
+      'Storybook',
+      'Jest',
+      'Sass',
+      'UX',
+      'Analytics',
+      'React Testing Library',
+      'Responsive Design',
+    ]
+  },
+  {
+    fromTo: '2019',
+    role: 'FullStack Javascript Developer',
     companyName: 'Team Software',
     responsibilities: [
       'Creation and maintenance of reusable components with React.',
@@ -17,11 +42,11 @@ const workHistory = [
     ],
     technologies: [
       'React',
-      'React Native',
       'NodeJS',
       'C#',
       'Redux',
-      'Azure Functions'
+      'Azure Functions',
+      'Jest'
     ]
   },
   {
@@ -87,18 +112,31 @@ function Resume() {
       <Sidebar completeName="Omar Rodolfo Cespedes Daza" />
       <div id="content">
         <Section bigTitle title="Intro">
-          Javascript developer with more than 5 years of experience. Currently
+          Javascript developer with more than 10 years of experience. Currently
           specializing in React. Passionate learner and always trying out the
           latest technologies.
         </Section>
-        <Section bigTitle title="Work History">
-          {workHistory.map(job => (
-            <WorkHistory key={job.fromTo} {...job} />
+        <Section className="work-container" bigTitle title="Work History">
+          {workHistory.map((job) => (
+            <ExperienceEntry
+              key={job.fromTo}
+              fromTo={job.fromTo}
+              title={job.role}
+              subtitle={job.companyName}
+              list={job.responsibilities}
+              badges={job.technologies}
+            />
           ))}
         </Section>
         <Section bigTitle title="Education">
-          {educationHistory.map(education => (
-            <EducationHistory key={education.fromTo} {...education} />
+          {educationHistory.map((education) => (
+            <ExperienceEntry
+              key={education.fromTo}
+              fromTo={education.fromTo}
+              title={education.career}
+              subtitle={education.institution}
+              list={education.skills}
+            />
           ))}
         </Section>
       </div>
